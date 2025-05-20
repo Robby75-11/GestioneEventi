@@ -12,7 +12,7 @@ public class Evento {
     @Id
     @GeneratedValue(strategy  = GenerationType.IDENTITY)
 
-    private long id;
+    private int id;
 
     private String titolo;
 
@@ -34,7 +34,7 @@ public class Evento {
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

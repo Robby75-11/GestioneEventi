@@ -22,7 +22,7 @@ public void  salva(Evento evento) {
     em.getTransaction().commit();
 }
 
-public Evento getById(Long id) {
+public Evento getById(int id) {
 
     return em.find(Evento.class,id);
 }
