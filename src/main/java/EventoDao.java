@@ -26,11 +26,25 @@ public Evento getById(int id) {
 
     return em.find(Evento.class,id);
 }
-public void delete(Evento evento) {
-    em.getTransaction().begin();
-    em.remove(evento);
-    em.getTransaction()
-            .commit();}
+public void delete(int id) {
+
+    Evento evento = em.find(Evento.class, id);
+    if (evento != null) {
+        em.getTransaction().begin();
+        em.remove(evento);
+        em.getTransaction()
+                .commit();
+    }
+    else {
+        System.out.println("Evento con ID " + id + " non trovato.");
+    }
+    }
+
+    public  void close(){
+    em.close();
+    }
+
+    }
 
 
-}
+

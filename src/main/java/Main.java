@@ -14,12 +14,14 @@ public class Main {
         EventoDao dao = new EventoDao(em);
 
         Evento evento = new Evento("Concerto", LocalDate.of(2025,6,15),
-                "Concerto rock in piazza", TipoEvento.PUBBLICO, 5000);
+                "Concerto rock in piazza", TipoEvento.PUBBLICO, 500000);
 
         dao.salva(evento);
 
         Evento eventoLetto = dao.getById(evento.getId());
         System.out.println("Evento recuperato: " + eventoLetto);
+
+
 
         em.close();
         emf.close();
